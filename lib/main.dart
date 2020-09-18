@@ -32,27 +32,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // Creating user profile as example
+    // Creating game character
 
-//    Variables
+    /*
+  //  1.Variables
   // All variables not initialized hold value null
     final String name = 'John';
     int xPos;
-//    Constants is some kind of mathematical constant example speed of light
-//    in contrast to final which is any variable
-//    Const also does not change
+  // Constants is some kind of mathematical constant example speed of light
+  // in contrast to final which is any variable
+  //Const also does not change
     const double g = 9.8;
     double speed = 1.7;
-  bool canMove = true;
-//  the bool value may not accept a string hence putting it as dynamic can assign a string value true
-//    dynamic canMove = true;
-//    canMove = 'false';
+    bool canMove = true;
+  //the bool value may not accept a string hence putting it as dynamic can assign a string value true
+  //dynamic canMove = true;
+  //canMove = 'false';
     xPos = 2;
 
-//    This will not work since its declared as final and can only be set once
-//    name = 'Kilima';
+  //This will not work since its declared as final and can only be set once
+  //name = 'Kilima';
 
-//    Variables operators
+  //Variables operators
    /*
     // + - * / ~/ %
     int finalPos = xPos + 2;
@@ -111,6 +112,45 @@ class _MyHomePageState extends State<MyHomePage> {
     print(canMove || false);
     print(canMove && false);
      */
+
+  */
+
+    // 3. Lists
+    /*
+    //inventory items as strings
+    //could either allow any data type items i.e generic variable
+    //var inventory = ['food', 'knife', 'rope', 2];
+    List<String> inventory = ['food', 'knife', 'rope'];
+    print(inventory); //prints all items in list
+    print(inventory[2]); //retrieve third item
+    inventory = ['food', 'knife', 'rope', 'axe', 'water']; // change entire list
+    inventory[0] = 'fruit'; //change item
+    inventory.getRange(0, 2); // get items in index 0 and 1;
+    inventory.setAll(0, ['milk', 'vegetables']); //changes items starting at the specified  index and changes only overlapping items
+    inventory.forEach((element) {print(element); }); // the forEach creates a reference to the list and does not manipulate the actual list
+    inventory.forEach((element) => print(element)); // simpler way of expressing it
+
+     */
+
+    //4. Maps (Dictionary)
+    /*
+    // inventory of items and the number of those items
+    // key = strings (item name), value = ints (number of items)
+    var inventory = {
+      'food': 2,
+      'axe': 1,
+      'shoes': 3
+    };
+
+    print(inventory);
+
+    int axeCount = inventory['axe'];
+    print(axeCount); // retrieves value from key axe
+
+    inventory['rope'] = 1; // the key does not exist hence it creates it
+    print(inventory);
+     */
+
 
 
     return Scaffold(
