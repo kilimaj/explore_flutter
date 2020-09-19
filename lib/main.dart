@@ -233,7 +233,6 @@ class _MyHomePageState extends State<MyHomePage> {
     //Every  for loop can be converted to a while loop but not every while loop can be converted to a for loop
 
     //6. Class - creating an instance object for our class GameObject
-
     GameObject newObject = GameObject(2, 7);
     print('initial x position: ${newObject.xPosition}');
     print('initial y position: ${newObject.yPosition}');
@@ -242,6 +241,12 @@ class _MyHomePageState extends State<MyHomePage> {
     print('new x position: ${newObject.xPosition}');
     print('new y position: ${newObject.yPosition}');
 
+    //7. Inheritance concepts
+    GameCharacter newCharacter = GameCharacter(5, 7, 'jean', 100);
+
+    newCharacter.move(8, 12);
+    print('new x position for character: ${newCharacter.xPosition}');
+    print('new y position for character: ${newCharacter.yPosition}');
 
     return Scaffold(
       appBar: AppBar(
@@ -280,6 +285,34 @@ class GameObject {
   move(int byXAmount, int byYAmount) {
     this.xPosition += byXAmount; // this keyword specifies the global variable
     this.yPosition += byYAmount;
+  }
+
+}
+
+// 7. Inheritance
+class GameCharacter extends GameObject {
+  String name;
+  int maxHealth;
+  int currentHealth;
+  GameCharacter(int xPosition, int yPosition, String name, int maxHealth)
+      : super(xPosition, yPosition){
+    this.name = name;
+    this.maxHealth = maxHealth;
+    this.currentHealth = maxHealth;
+  }
+
+  // Must have exact amount of parameters no less no more
+  //Can add additional implementation within the function
+  move(int byXAmount, int byYAmount) {
+    super.move(byXAmount, byYAmount);
+    print('Player new position is ($xPosition, $yPosition)');
+  }
+
+  healCharacter(int byAmount){
+    currentHealth += byAmount;
+    if (currentHealth > maxHealth) {
+      currentHealth = maxHealth;
+    }
   }
 
 }
