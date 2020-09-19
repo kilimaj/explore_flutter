@@ -151,7 +151,31 @@ class _MyHomePageState extends State<MyHomePage> {
     print(inventory);
      */
 
+    // 5. Functions
+    /*// In dart nested functions is supported hence we will build functions within this build function
+    // Function to move a character around the board
 
+    int position = 5;
+    move(int byAmount) {
+      position += byAmount;
+    }
+
+    print(position);
+
+    move(5); //move forward
+    print(position);
+
+    move(-3); //move backward
+    print(position);
+
+    // Function with a return type
+    int moveIt(int initialPosition, int byAmount) {
+      int finalPosition = initialPosition + byAmount;
+      return finalPosition;
+    }
+
+    int globalFinalPosition = moveIt(5, 10);
+    print(globalFinalPosition);*/
 
     return Scaffold(
       appBar: AppBar(
