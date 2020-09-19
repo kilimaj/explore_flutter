@@ -232,6 +232,15 @@ class _MyHomePageState extends State<MyHomePage> {
     //Note
     //Every  for loop can be converted to a while loop but not every while loop can be converted to a for loop
 
+    //6. Class - creating an instance object for our class GameObject
+
+    GameObject newObject = GameObject(2, 7);
+    print('initial x position: ${newObject.xPosition}');
+    print('initial y position: ${newObject.yPosition}');
+
+    newObject.move(7, -3);
+    print('new x position: ${newObject.xPosition}');
+    print('new y position: ${newObject.yPosition}');
 
 
     return Scaffold(
@@ -250,4 +259,27 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+
+// 6. Class
+// create a generic game object
+//state
+//constructor
+//behaviour
+class GameObject {
+  //instance of the object will be created in the build function
+  int xPosition;
+  int yPosition;
+
+  //Constructor
+  GameObject(int xPosition, int yPosition) {
+    this.xPosition = xPosition; // this keyword specifies the global variable
+    this.yPosition = yPosition;
+  }
+
+  move(int byXAmount, int byYAmount) {
+    this.xPosition += byXAmount; // this keyword specifies the global variable
+    this.yPosition += byYAmount;
+  }
+
 }
